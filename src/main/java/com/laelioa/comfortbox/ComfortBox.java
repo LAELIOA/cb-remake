@@ -10,8 +10,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class ComfortBox {
-    @SidedProxy(clientSide = "comfortbox.proxy.ClientProxy",
-            serverSide = "comfortbox.proxy.ServerProxy")
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY,
+            serverSide = Reference.SERVER_PROXY)
     public static CommonProxy proxy;
 
     @EventHandler
