@@ -15,6 +15,9 @@ public class ComfortBoxBlocks {
                 .setRegistryName(Reference.MODID, "test")
                 .setUnlocalizedName("test_unlocalised")
                 .setCreativeTab(CreativeTabs.MISC);
+    }
+
+    public static void register() {
         registerBlock(TEST);
     }
 
