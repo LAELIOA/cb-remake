@@ -1,10 +1,8 @@
 package com.laelioa.comfortbox.init;
 
-import com.laelioa.comfortbox.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
@@ -46,9 +44,12 @@ public class RegistryHandler {
 
     public static class Models {
         public static void registerModel(Block block) {
-            Item item = new ItemBlock(block);
-            ModelResourceLocation resourceLocation = new ModelResourceLocation(Reference.MODID + ":" + block.getRegistryName(), "inventory");
-            ModelLoader.setCustomModelResourceLocation(item, 0, resourceLocation);
+            Item item = Item.getItemFromBlock(block);
+            ModelResourceLocation resourceLocation;
+            if (block.getRegistryName() != null) {
+                resourceLocation = new ModelResourceLocation(block.getRegistryName(), "inventory");
+                ModelLoader.setCustomModelResourceLocation(item, 0, resourceLocation);
+            }
         }
     }
 }
