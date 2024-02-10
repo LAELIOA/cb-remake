@@ -45,7 +45,7 @@ public class RegistryHandler {
     }
 
     public static class Models {
-        public static void registerModels(Block block) {
+        public static void registerModel(Block block) {
             Item item = new ItemBlock(block);
             ModelResourceLocation resourceLocation = new ModelResourceLocation(Reference.MODID + ":" + block.getRegistryName(), "inventory");
             ModelLoader.setCustomModelResourceLocation(item, 0, resourceLocation);
